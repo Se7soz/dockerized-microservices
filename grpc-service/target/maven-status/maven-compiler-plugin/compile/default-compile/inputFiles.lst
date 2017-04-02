@@ -1,9 +1,0 @@
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/dict/PasswordTrie.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/grpc/HealthStatusService.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/config/ServerEngine.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/GrpcMicroService.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/dict/PasswordDictReader.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/grpc/GrpcServerInterceptor.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/grpc/GrpcService.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/grpc/PasswordsService.java
-/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/config/GrpcServiceConfiguration.java

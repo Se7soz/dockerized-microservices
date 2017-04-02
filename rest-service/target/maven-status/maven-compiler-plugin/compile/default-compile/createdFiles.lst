@@ -1,9 +1,0 @@
-com/se7so/config/RestServiceConfiguration.class
-com/se7so/client/GrpcClientInterceptor.class
-com/se7so/client/GrpcClientInterceptor$1.class
-com/se7so/RestMicroService.class
-com/se7so/model/PasswordsResponseDto.class
-com/se7so/client/PasswordsServiceClient.class
-com/se7so/model/PasswordsResponseDto$PasswordsResponseDtoBuilder.class
-com/se7so/rest/RestServiceAPI.class
-com/se7so/client/GrpcClientInterceptor$1$1.class

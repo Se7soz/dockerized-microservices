@@ -1,0 +1,5 @@
+/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/config/ServerEngine.java
+/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/GrpcMicroService.java
+/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/grpc/GrpcServerInterceptor.java
+/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/grpc/UsersGrpcService.java
+/home/se7so/IdeaProjects/dockerized-microservices/grpc-service/src/main/java/com/se7so/config/GrpcServiceConfiguration.java

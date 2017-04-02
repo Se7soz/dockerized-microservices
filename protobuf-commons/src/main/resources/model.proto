@@ -1,0 +1,22 @@
+syntax = "proto3";
+package com.se7so.model;
+
+option java_multiple_files = true;
+option java_outer_classname = "Model";
+option java_package = "com.se7so.model";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/any.proto";
+
+message User {
+    string username = 1;
+    string password = 2;
+}
+
+message UsersQuery {
+    string users = 1;
+}
+
+message UsersResponse {
+    repeated com.se7so.model.User users = 1;
+}

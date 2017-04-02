@@ -1,0 +1,9 @@
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/UsersQuery.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/User.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/Model.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/UsersResponse.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/UsersQueryOrBuilder.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/UsersResponseOrBuilder.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/model/UserOrBuilder.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/client/Service.java
+/home/se7so/IdeaProjects/dockerized-microservices/protobuf-commons/src/main/java/com/se7so/client/UsersServiceGrpc.java

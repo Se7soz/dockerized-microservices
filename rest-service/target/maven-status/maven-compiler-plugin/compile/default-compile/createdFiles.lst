@@ -1,0 +1,9 @@
+com/se7so/model/UserDto.class
+com/se7so/config/RestServiceConfiguration.class
+com/se7so/client/UsersServiceClient.class
+com/se7so/client/GrpcClientInterceptor.class
+com/se7so/client/GrpcClientInterceptor$1.class
+com/se7so/RestMicroService.class
+com/se7so/rest/SampleRest.class
+com/se7so/model/UserDto$UserDtoBuilder.class
+com/se7so/client/GrpcClientInterceptor$1$1.class

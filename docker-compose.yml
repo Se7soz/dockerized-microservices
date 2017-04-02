@@ -1,0 +1,12 @@
+version: '2'
+services:
+  grpc-service:
+    build: ./grpc-service/
+    ports:
+     - "5000:5000"
+  rest-service:
+    build: ./restmicroservice/
+    links:
+      - grpc-service
+    ports:
+      - "80:8080"

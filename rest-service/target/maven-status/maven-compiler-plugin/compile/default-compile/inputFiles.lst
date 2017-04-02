@@ -1,0 +1,6 @@
+/home/se7so/IdeaProjects/dockerized-microservices/rest-service/src/main/java/com/se7so/client/GrpcClientInterceptor.java
+/home/se7so/IdeaProjects/dockerized-microservices/rest-service/src/main/java/com/se7so/RestMicroService.java
+/home/se7so/IdeaProjects/dockerized-microservices/rest-service/src/main/java/com/se7so/client/UsersServiceClient.java
+/home/se7so/IdeaProjects/dockerized-microservices/rest-service/src/main/java/com/se7so/model/UserDto.java
+/home/se7so/IdeaProjects/dockerized-microservices/rest-service/src/main/java/com/se7so/config/RestServiceConfiguration.java
+/home/se7so/IdeaProjects/dockerized-microservices/rest-service/src/main/java/com/se7so/rest/SampleRest.java

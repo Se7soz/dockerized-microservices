@@ -1,12 +1,24 @@
-*.class
+# maven
+target
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+# IntelliJ
+.idea
+*.iml
+# vscode
+.vscode
 
-# Package Files #
-*.jar
-*.war
-*.ear
+# Eclipse
+.project
+.settings
+.classpath
+out
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+.profile
+.DS_Store
+.Python
+*.pyc
+eggs/
+.lein-repl-history
+gen/
+frontend/
+providers/

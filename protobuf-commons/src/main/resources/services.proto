@@ -1,15 +1,20 @@
 syntax = "proto3";
-package com.se7so.service;
+package com.se7so.services;
 
 option java_multiple_files = true;
-option java_outer_classname = "Service";
 option java_package = "com.se7so.service";
+option java_outer_classname = "Service";
 
+import "google/protobuf/empty.proto";
 import "model.proto";
-import "google/protobuf/wrappers.proto";
-import "google/protobuf/any.proto";
 
-service UsersService {
-    rpc getUsers (com.se7so.model.UsersQuery) returns (com.se7so.model.UsersResponse) {
+service PasswordsService {
+    rpc findPasswords (com.se7so.model.FindPasswordsQuery) returns (com.se7so.model.FindPasswordsResponse) {
+    }
+}
+
+service PasswordsServiceHealthService {
+    rpc getPasswordsServiceHealthStatus (google.protobuf.Empty) returns (com.se7so.model.PasswordsServiceHealthStatus) {
+
     }
 }

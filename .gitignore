@@ -1,9 +1,18 @@
 # maven
 target
+grpc-service/target
+protobuf-commons/target
+rest-service/target
+target/*
+grpc-service/target/*
+protobuf-commons/target/*
+rest-service/target/*
+
 
 # IntelliJ
 .idea
 *.iml
+*.lst
 # vscode
 .vscode
 

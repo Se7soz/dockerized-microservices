@@ -1,7 +1,7 @@
 package com.se7so.config;
 
 import com.se7so.client.GrpcClientInterceptor;
-import com.se7so.client.UsersServiceClient;
+import com.se7so.client.PasswordsServiceClient;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,8 +15,10 @@ public class RestServiceConfiguration {
 
     @Value("${grpc.host}")
     private String grpcHost;
-    @Value("${grpc.port}")
-    private int grpcPort;
+    @Value("${password.service.grpc.port}")
+    private int passwordsServicePort;
+    @Value("${health.status.grpc.port}")
+    private int healthServicePort;
 
     @Bean
     public GrpcClientInterceptor grpcClientInterceptor() {
@@ -24,12 +26,18 @@ public class RestServiceConfiguration {
     }
 
     @Bean
-    public UsersServiceClient usersServiceClient(GrpcClientInterceptor interceptor) {
-        return new UsersServiceClient(this::managedUsersServiceChannel, interceptor);
+    public PasswordsServiceClient passwordsServiceClient(GrpcClientInterceptor interceptor) {
+        return new PasswordsServiceClient(this::managedPasswordsServiceChannel, this::managedHealthServiceChannel, interceptor);
     }
 
-    public ManagedChannel managedUsersServiceChannel(){
-        return ManagedChannelBuilder.forAddress(grpcHost, grpcPort)
+    public ManagedChannel managedPasswordsServiceChannel(){
+        return ManagedChannelBuilder.forAddress(grpcHost, passwordsServicePort)
+                .usePlaintext(true)
+                .build();
+    }
+
+    public ManagedChannel managedHealthServiceChannel(){
+        return ManagedChannelBuilder.forAddress(grpcHost, healthServicePort)
                 .usePlaintext(true)
                 .build();
     }

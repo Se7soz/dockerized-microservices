@@ -45,7 +45,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>se7sodemo</groupId>
+            <groupId>dockerized-microservices</groupId>
             <artifactId>protobuf-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

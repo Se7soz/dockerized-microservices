@@ -1,7 +1,6 @@
-com/se7so/grpc/UsersGrpcService.class
+com/se7so/grpc/PasswordsService.class
+com/se7so/GrpcMicroService.class
 com/se7so/grpc/GrpcServerInterceptor.class
 com/se7so/config/ServerEngine.class
 com/se7so/grpc/GrpcServerInterceptor$1.class
-com/se7so/GrpcMicroService.class
 com/se7so/config/GrpcServiceConfiguration.class
-com/se7so/grpc/UsersGrpcService$1.class

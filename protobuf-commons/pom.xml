@@ -10,12 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>protobuf-commons</artifactId>
-    <groupId>se7sodemo</groupId>
+    <groupId>dockerized-microservices</groupId>
     <packaging>jar</packaging>
 
     <properties>
         <protobuf.version>3.1.0</protobuf.version>
-        <grpc.version>1.2.0</grpc.version>
+        <grpc.version>1.0.3</grpc.version>
     </properties>
 
     <dependencies>
@@ -30,28 +30,11 @@
             <version>${protobuf.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.protobuf-java-format</groupId>
-            <artifactId>protobuf-java-format</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
-            <version>${grpc.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty</artifactId>
+            <artifactId>grpc-all</artifactId>
             <version>${grpc.version}</version>
         </dependency>
     </dependencies>
-
     <build>
         <extensions>
             <extension>
@@ -61,6 +44,15 @@
             </extension>
         </extensions>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
@@ -75,13 +67,23 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <id>proto</id>
                         <goals>
                             <goal>compile</goal>
-                            <goal>compile-custom</goal>
                         </goals>
                         <configuration>
                             <protoSourceRoot>src/main/resources</protoSourceRoot>
-                            <outputDirectory>src/main/java</outputDirectory>
+                            <outputDirectory>src/main/proto</outputDirectory>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>grpc</id>
+                        <goals>
+                            <goal>compile-custom</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>src/main/grpc</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

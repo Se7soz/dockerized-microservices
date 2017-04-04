@@ -1,7 +1,6 @@
 package com.se7so.dict;
 
 import com.google.common.base.Strings;
-import sun.text.normalizer.Trie;
 
 import java.util.*;
 

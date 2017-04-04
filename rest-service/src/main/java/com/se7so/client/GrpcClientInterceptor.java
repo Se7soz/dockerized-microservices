@@ -18,7 +18,7 @@ public class GrpcClientInterceptor implements ClientInterceptor {
                     @Override
                     public void onClose(Status status, Metadata trailers) {
                         if (!status.isOk()) {
-                            log.error("An error occurred while calling users service");
+                            log.error("An error occurred while calling passwords service");
                         }
                         super.onClose(status, trailers);
                     }

@@ -23,7 +23,7 @@ public class RestServiceAPI {
 
     @RequestMapping(value = "/passwords", produces = "application/json")
     @ResponseBody
-    public PasswordsResponseDto getUsersFromRemoteService(@RequestParam(value = "q") String query) {
+    public PasswordsResponseDto getPasswordsService(@RequestParam(value = "q") String query) {
         return passwordsServiceClient.findPasswordMatches(query);
     }
 }

@@ -10,3 +10,8 @@ services:
       - grpc-service
     ports:
       - "80:8080"
+  graphana:
+    image: "jlachowski/grafana-graphite-statsd"
+    ports:
+      - "2003:2003"
+      - "8082:80"

@@ -11,8 +11,20 @@ Each microservice has a basic docker file to be built and deployed easily as a d
 > 3. Enable annotation processing
 
 **To run using docker-compose**
-> Go to application root folder
-> Run ```docker-compose up```
+> 1. ```cd /path/to/dockerized-microservices/```
+> 2. Run ```docker-compose up```
+
+**To rebuild using docker-compose**
+> 1. ```cd /path/to/dockerized-microservices/```
+> 2. Run ```docker-compose build```
+
+**To stop container without cleaning up containers**
+> 1. ```cd /path/to/dockerized-microservices/```
+> 2. Run ```docker-compose stop```
+
+**To stop container and cleaning up containers**
+> 1. ```cd /path/to/dockerized-microservices/```
+> 2. Run ```docker-compose down```
 
 **Important Note**
 

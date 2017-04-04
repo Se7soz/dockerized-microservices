@@ -15,6 +15,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.List;
+
 @RequiredArgsConstructor(onConstructor =  @__(@Autowired))
 @Log4j2
 public class PasswordsService extends PasswordsServiceGrpc.PasswordsServiceImplBase implements GrpcService {
@@ -22,6 +24,8 @@ public class PasswordsService extends PasswordsServiceGrpc.PasswordsServiceImplB
     @Getter
     @Value("${password.service.grpc.port}")
     private int port;
+    @Value("${password.service.max.results}")
+    private int maxResults;
 
     @Setter
     @Getter
@@ -31,11 +35,18 @@ public class PasswordsService extends PasswordsServiceGrpc.PasswordsServiceImplB
 
     @Override
     public void findPasswords(FindPasswordsQuery request, StreamObserver<FindPasswordsResponse> responseObserver) {
+        String prefix = request.getQuery();
+
+        List<String> results = reader.getDict().findPrefixes(prefix);
+        int totalMatches = results.size();
+
+        if(totalMatches > maxResults) {
+            results = results.subList(0, maxResults);
+        }
+
         responseObserver.onNext(FindPasswordsResponse.newBuilder()
-                .addMatches("123456")
-                .addMatches("62827377")
-                .addMatches("onetwothree")
-                .setNumOfMatches(150)
+                .addAllMatches(results)
+                .setNumOfMatches(totalMatches)
                 .build());
 
         responseObserver.onCompleted();

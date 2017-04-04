@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
@@ -37,6 +38,9 @@ public class PasswordsServiceClient {
 
         if(!CollectionUtils.isEmpty(response.getMatchesList())) {
             responseDtoBuilder.matches(response.getMatchesList());
+        }
+        else {
+            responseDtoBuilder.matches(Collections.emptyList());
         }
 
         return responseDtoBuilder.build();

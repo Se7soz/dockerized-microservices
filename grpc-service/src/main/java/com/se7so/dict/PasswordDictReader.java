@@ -16,6 +16,8 @@ import java.nio.file.Paths;
 public class PasswordDictReader {
     @Value("${password.file.path}")
     private String passFilePath;
+    @Value("${password.max.length}")
+    private int maxPasswordLength;
     @Getter
     private PasswordTrie dict = new PasswordTrie();
 
@@ -24,7 +26,8 @@ public class PasswordDictReader {
 
         try {
             Files.lines(Paths.get(passFilePath), StandardCharsets.ISO_8859_1)
-                    .forEach(password -> dict.add(password));
+                    .filter(password -> password.length() < maxPasswordLength)
+                    .forEach(password -> dict.insert(password));
 
             log.info("Read {} passwords from database", dict.size());
         }

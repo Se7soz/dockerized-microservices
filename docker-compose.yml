@@ -5,7 +5,7 @@ services:
     ports:
      - "5000:5000"
   rest-service:
-    build: ./restmicroservice/
+    build: ./rest-service/
     links:
       - grpc-service
     ports:

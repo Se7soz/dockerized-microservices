@@ -13,6 +13,8 @@ Each microservice has a basic docker file to be built and deployed easily as a d
 **To run using docker-compose**
 > 1. ```cd /path/to/dockerized-microservices/```
 > 2. Run ```docker-compose up```
+> 3. Go to ```http://localhost/health```
+> 4. Go to ```http://localhost/passwords?q=123```
 
 **To rebuild using docker-compose**
 > 1. ```cd /path/to/dockerized-microservices/```

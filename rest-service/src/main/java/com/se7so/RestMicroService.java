@@ -10,6 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 public class RestMicroService {
 
+    /**
+     * Spring boot start up of the REST service
+     * @param args
+     */
     public static void main(final String[] args) {
         SpringApplication.run(RestMicroService.class, args);
     }

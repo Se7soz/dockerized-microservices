@@ -8,6 +8,15 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class GrpcServerInterceptor implements ServerInterceptor {
 
+    /**
+     * Intercept all GRPC calls
+     * @param serverCall
+     * @param metadata
+     * @param serverCallHandler
+     * @param <ReqT>
+     * @param <RespT>
+     * @return
+     */
     @Override
     public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(final ServerCall<ReqT, RespT> serverCall, Metadata metadata, ServerCallHandler<ReqT, RespT> serverCallHandler) {
 

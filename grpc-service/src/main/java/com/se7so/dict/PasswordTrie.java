@@ -13,6 +13,10 @@ public class PasswordTrie {
         root = new TrieNode();
     }
 
+    /**
+     * Insert a new password to the TRIE data structure
+     * @param password A new password read from the store
+     */
     public void insert(String password) {
         numOfPasswords++;
 
@@ -39,6 +43,11 @@ public class PasswordTrie {
         }
     }
 
+    /**
+     * Find all matches that has passed prefix as a prefix
+     * @param prefix Query to check all matches
+     * @return List of matches found
+     */
     public List<String> findPrefixes(String prefix) {
         if(root == null || Strings.isNullOrEmpty(prefix)) {
             return Collections.emptyList();
@@ -63,6 +72,12 @@ public class PasswordTrie {
         return matches;
     }
 
+    /**
+     * Parse the TRIE data structure to find all matches
+     * @param prefix Prefix to check in dictionary
+     * @param t Current node
+     * @return List of all matches
+     */
     private List<String> getAllMatches(String prefix, TrieNode t) {
         Stack<TrieNode> st = new Stack<>();
         Stack<String> str = new Stack<>();

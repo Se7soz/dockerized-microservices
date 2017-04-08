@@ -20,22 +20,39 @@ public class RestServiceConfiguration {
     @Value("${health.status.grpc.port}")
     private int healthServicePort;
 
+    /**
+     * GRPC client interceptor
+     * @return A GRPC client interceptor instance
+     */
     @Bean
     public GrpcClientInterceptor grpcClientInterceptor() {
         return new GrpcClientInterceptor();
     }
 
+    /**
+     * Client to call the passwords service
+     * @param interceptor Client interceptor
+     * @return Passwords service client instance
+     */
     @Bean
     public PasswordsServiceClient passwordsServiceClient(GrpcClientInterceptor interceptor) {
         return new PasswordsServiceClient(this::managedPasswordsServiceChannel, this::managedHealthServiceChannel, interceptor);
     }
 
+    /**
+     * Managed channel supplier for the passwords service
+     * @return A managed channel with proper configuration
+     */
     public ManagedChannel managedPasswordsServiceChannel(){
         return ManagedChannelBuilder.forAddress(grpcHost, passwordsServicePort)
                 .usePlaintext(true)
                 .build();
     }
 
+    /**
+     * Managed channel supplier for the health status service
+     * @return A managed channel with proper configuration
+     */
     public ManagedChannel managedHealthServiceChannel(){
         return ManagedChannelBuilder.forAddress(grpcHost, healthServicePort)
                 .usePlaintext(true)

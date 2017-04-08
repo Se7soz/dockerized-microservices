@@ -21,8 +21,11 @@ public class PasswordDictReader {
     @Getter
     private PasswordTrie dict = new PasswordTrie();
 
+    /**
+     * Read passwords saved in store
+     */
     @PostConstruct
-    public void readFile() {
+    public void readPasswordStore() {
 
         try {
             Files.lines(Paths.get(passFilePath), StandardCharsets.ISO_8859_1)

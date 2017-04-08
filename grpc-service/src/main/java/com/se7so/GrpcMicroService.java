@@ -12,6 +12,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class GrpcMicroService {
 
+    /**
+     * Spring boot start up of the GRPC services
+     * @param args
+     */
     public static void main(final String[] args) {
         System.setProperty("server.port", "8081");
         SpringApplication.run(GrpcMicroService.class, args);

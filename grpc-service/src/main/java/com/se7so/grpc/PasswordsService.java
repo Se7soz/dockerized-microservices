@@ -33,6 +33,11 @@ public class PasswordsService extends PasswordsServiceGrpc.PasswordsServiceImplB
     private final GrpcServerInterceptor interceptor;
     private final PasswordDictReader reader;
 
+    /**
+     * Find passwords end point
+     * @param request Find password query
+     * @param responseObserver Response observer
+     */
     @Override
     public void findPasswords(FindPasswordsQuery request, StreamObserver<FindPasswordsResponse> responseObserver) {
         String prefix = request.getQuery();
@@ -52,6 +57,10 @@ public class PasswordsService extends PasswordsServiceGrpc.PasswordsServiceImplB
         responseObserver.onCompleted();
     }
 
+    /**
+     * Get password service definition
+     * @return A service definition instance
+     */
     @Override
     public ServerServiceDefinition getServiceDefinition() {
         return ServerInterceptors.intercept(bindService(), interceptor);

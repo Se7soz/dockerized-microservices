@@ -14,6 +14,10 @@ public interface GrpcService {
     Server getServer();
     void setServer(Server server);
 
+    /**
+     * Start a grpc service
+     * @throws IOException
+     */
     default void start() throws IOException {
         Server server = NettyServerBuilder
                 .forPort(getPort())
@@ -24,6 +28,10 @@ public interface GrpcService {
         setServer(server);
     }
 
+    /**
+     * Closes a grpc service
+     * @throws IOException
+     */
     default void close() throws IOException {
         if(getServer() != null) {
             getServer().shutdown();

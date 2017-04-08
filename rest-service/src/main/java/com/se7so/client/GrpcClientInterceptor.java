@@ -8,6 +8,15 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 @Log4j2
 public class GrpcClientInterceptor implements ClientInterceptor {
 
+    /**
+     * GRPC client interceptor
+     * @param method
+     * @param callOptions
+     * @param next
+     * @param <ReqT>
+     * @param <RespT>
+     * @return
+     */
     @Override
     public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
         ClientCall<ReqT, RespT> nextCall = next.newCall(method, callOptions);

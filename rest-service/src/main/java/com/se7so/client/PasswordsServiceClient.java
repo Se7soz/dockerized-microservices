@@ -22,6 +22,11 @@ public class PasswordsServiceClient {
     private final Supplier<ManagedChannel> healthServiceManagedChannelSupplier;
     private final GrpcClientInterceptor interceptor;
 
+    /**
+     * A client to call the GRPC find password service
+     * @param param Query
+     * @return Map of the GRPC service response
+     */
     public PasswordsResponseDto findPasswordMatches(String param) {
         ManagedChannel managedChannel = passwordsServiceManagedChannelSupplier.get();
         FindPasswordsQuery query = FindPasswordsQuery.newBuilder()
@@ -46,6 +51,10 @@ public class PasswordsServiceClient {
         return responseDtoBuilder.build();
     }
 
+    /**
+     * A client to call the health status service
+     * @return Map of the health status response
+     */
     public PassServiceHealthDto getHealthStatus() {
         ManagedChannel managedChannel = healthServiceManagedChannelSupplier.get();
 

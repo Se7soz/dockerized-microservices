@@ -16,11 +16,20 @@ public class RestServiceAPI {
     @Autowired
     private PasswordsServiceClient passwordsServiceClient;
 
+    /**
+     * Health status REST endpoint
+     * @return Health status
+     */
     @RequestMapping(value = "/health", produces = "application/json")
     public PassServiceHealthDto getPasswordServiceHealthDto() {
         return passwordsServiceClient.getHealthStatus();
     }
 
+    /**
+     * Find passwords REST endpoint
+     * @param query Query to search for
+     * @return List of matches
+     */
     @RequestMapping(value = "/passwords", produces = "application/json")
     @ResponseBody
     public PasswordsResponseDto getPasswordsService(@RequestParam(value = "q") String query) {

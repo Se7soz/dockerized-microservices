@@ -19,6 +19,9 @@ public class ServerEngine implements Closeable {
     private final PasswordsService passwordsService;
     private final HealthStatusService healthStatusService;
 
+    /**
+     * Start GRPC application services
+     */
     @PostConstruct
     public void start() {
         try {
@@ -37,6 +40,9 @@ public class ServerEngine implements Closeable {
         }
     }
 
+    /**
+     * Close GRPC application services
+     */
     @Override
     public void close() {
         try {

@@ -36,6 +36,11 @@ public class HealthStatusService extends PasswordsServiceHealthServiceGrpc.Passw
     private final GrpcServerInterceptor interceptor;
     private final PasswordDictReader passwordReader;
 
+    /**
+     * Health status endpoint
+     * @param request Empty request
+     * @param responseObserver Response observer
+     */
     @Override
     public void getPasswordsServiceHealthStatus(Empty request, StreamObserver<PasswordsServiceHealthStatus> responseObserver) {
         responseObserver.onNext(PasswordsServiceHealthStatus.newBuilder()
@@ -46,6 +51,10 @@ public class HealthStatusService extends PasswordsServiceHealthServiceGrpc.Passw
         responseObserver.onCompleted();
     }
 
+    /**
+     * Get the current service definition
+     * @return A service definition instance
+     */
     @Override
     public ServerServiceDefinition getServiceDefinition() {
         return ServerInterceptors.intercept(bindService(), interceptor);

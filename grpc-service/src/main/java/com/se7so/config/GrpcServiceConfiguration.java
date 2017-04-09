@@ -1,5 +1,6 @@
 package com.se7so.config;
 
+import com.codahale.metrics.MetricRegistry;
 import com.se7so.dict.PasswordDictReader;
 import com.se7so.grpc.GrpcServerInterceptor;
 import com.se7so.grpc.HealthStatusService;
@@ -18,8 +19,8 @@ public class GrpcServiceConfiguration {
      * @return An interceptor instance for grpc services
      */
     @Bean
-    public GrpcServerInterceptor grpcServerInterceptor() {
-        return new GrpcServerInterceptor();
+    public GrpcServerInterceptor grpcServerInterceptor(MetricRegistry metricRegistry) {
+        return new GrpcServerInterceptor(metricRegistry);
     }
 
     /**

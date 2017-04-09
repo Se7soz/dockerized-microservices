@@ -1,0 +1,26 @@
+# maven
+target
+target/*
+
+# IntelliJ
+.idea
+*.iml
+*.lst
+# vscode
+.vscode
+
+# Eclipse
+.project
+.settings
+.classpath
+out
+
+.profile
+.DS_Store
+.Python
+*.pyc
+eggs/
+.lein-repl-history
+gen/
+frontend/
+providers/

@@ -13,11 +13,6 @@
     <groupId>dockerized-microservices</groupId>
     <packaging>jar</packaging>
 
-    <properties>
-        <protobuf.version>3.1.0</protobuf.version>
-        <grpc.version>1.0.3</grpc.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
@@ -52,6 +47,26 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <id>add-javagen</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/grpc</source>
+                                <source>src/main/proto</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>

@@ -6,18 +6,12 @@ services:
      - graphite
     ports:
      - "5000:5000"
-    environment:
-      - JAVA_OPTS=-Xmx5g -Xms2g -XX:MaxPermSize=5g
-      - CATALINA_OPTS=-Xmx5g -Xms2g -XX:MaxPermSize=5g
   rest-service:
     build: ./rest-service/
     links:
       - grpc-service
     ports:
       - "80:8080"
-    environment:
-      - JAVA_OPTS=-Xmx5g -Xms2g -XX:MaxPermSize=5g
-      - CATALINA_OPTS=-Xmx5g -Xms2g -XX:MaxPermSize=5g
   graphite:
     image: "jlachowski/grafana-graphite-statsd"
     ports:

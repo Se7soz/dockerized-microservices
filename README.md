@@ -28,6 +28,8 @@ Each microservice has a basic docker file to be built and deployed easily as a d
 > 1. ```cd /path/to/dockerized-microservices/```
 > 2. Run ```docker-compose down```
 
+This is to run locally .. you can also run it on a docker swarm cluster or Kubernetes .. please check the articles on [my blog](http://se7so.blogspot.de/2017/04/docker-microservices-all-in-one.html).
+
 **Important Note**
 
-> If you see any issue feel free to submit a PR and I will update the topic on my blog by mentioning your name and your github profile [here](http://se7so.blogspot.com).
+> You can read about this on my blog to understand the purpose of the demo and get some quick knowledge of the technologies used. [here](http://se7so.blogspot.de/2017/04/docker-microservices-all-in-one.html).

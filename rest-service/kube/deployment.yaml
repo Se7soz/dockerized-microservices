@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: rest-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-service
+  template:
+    metadata:
+      name: rest-service
+      labels:
+        app: rest-service
+    spec:
+      containers:
+        - name: rest-service
+          image: docker.io/husseincoder/rest-service
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

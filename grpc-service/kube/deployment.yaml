@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: grpc-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpc-service
+  template:
+    metadata:
+      name: grpc-service
+      labels:
+        app: grpc-service
+    spec:
+      containers:
+        - name: grpc-service
+          image: docker.io/husseincoder/grpc-service
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+            - containerPort: 5001
+

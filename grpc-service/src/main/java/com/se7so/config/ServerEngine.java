@@ -1,8 +1,8 @@
 package com.se7so.config;
 
 import com.se7so.grpc.HealthStatusService;
-import com.se7so.grpc.PasswordsService;
-import lombok.RequiredArgsConstructor;
+//import com.se7so.grpc.PasswordsService;
+//import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

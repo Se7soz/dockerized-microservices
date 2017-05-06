@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: se7so-jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: se7so-jenkins
+  template:
+    metadata:
+      name: se7so-jenkins
+      labels:
+        app: se7so-jenkins
+    spec:
+      containers:
+        - name: se7so-jenkins
+          image: docker.io/husseincoder/jenkins:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
